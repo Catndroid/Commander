@@ -1,5 +1,11 @@
 # Commander
+![License: MIT](https://img.shields.io/badge/license-MIT-orange.svg)
+![Platform: Android](https://img.shields.io/badge/platform-Android-3DDC84)
+![Language: yuv3](https://img.shields.io/badge/language-yuv3-blue.svg)
 Simple Android Shell Command Executor
+Written using **iApp v3**
+> There might be some problems
+
 For daily use, we recommend **compiling it yourself** rather than using the pre-compiled binary APKs from the Releases; please refer to the "How to package" section.
 
 ## How to package (compile)
