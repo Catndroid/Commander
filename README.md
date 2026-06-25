@@ -3,6 +3,8 @@
 ![Platform: Android](https://img.shields.io/badge/platform-Android-3DDC84)
 ![Language: yuv3](https://img.shields.io/badge/language-yuv3-blue.svg)
 
+Document Language Support: <a href="/README_zh-hk.md">繁體中文(Chinese Traditional)</a>
+
 Simple Android Shell Command Executor
 Written using **iApp v3**
 > There might be some problems
