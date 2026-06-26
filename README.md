@@ -2,6 +2,7 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-orange.svg)
 ![Platform: Android](https://img.shields.io/badge/platform-Android-3DDC84)
 ![Language: yuv3](https://img.shields.io/badge/language-yuv3-blue.svg)
+![GitHub Repo stars](https://img.shields.io/github/stars/Catndroid/Commander)
 
 Document Language Support: <a href="/README.md">English(US)</a> <a href="/README_zh-hk.md">繁體中文(Chinese Traditional)</a>
 
