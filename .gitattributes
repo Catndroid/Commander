@@ -1,2 +1,3 @@
 * linguist-language=Shell
 *.iyu linguist-language=XML
+*.mjava linguist-language=Java
