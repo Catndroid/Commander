@@ -1,0 +1,40 @@
+imports("java.io.BufferedReader, java.io.InputStream, java.io.InputStreamReader, java.io.IOException");
+
+public String execShell(String cmd) {
+    StringBuilder result = new StringBuilder();
+    Process process = null;
+    BufferedReader inputReader = null;
+    BufferedReader errorReader = null;
+
+    try {
+        process = Runtime.getRuntime().exec(cmd);
+        
+        inputReader = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
+        String line;
+        while ((line = inputReader.readLine()) != null) {
+            result.append(line).append("\n");
+        }
+
+        errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "UTF-8"));
+        while ((line = errorReader.readLine()) != null) {
+            result.append("Error: ").append(line).append("\n");
+        }
+
+        process.waitFor();
+
+    } catch (IOException e) {
+        result.append("IOException: ").append(e.getMessage());
+    } catch (InterruptedException e) {
+        result.append("InterruptedException: ").append(e.getMessage());
+    } finally {
+        try {
+            if (inputReader != null) inputReader.close();
+            if (errorReader != null) errorReader.close();
+            if (process != null) process.destroy();
+        } catch (IOException e) {
+            result.append("Fall in Resources: ").append(e.getMessage());
+        }
+    }
+
+    return result.toString();
+}

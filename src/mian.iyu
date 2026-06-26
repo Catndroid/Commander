@@ -1,0 +1,177 @@
+<View id="2" did="0" type="Toolbar">
+<ppt>width=-1
+height=-3
+background=#222222
+app_TitleColor=#ffffff
+app_subTitleColor=#ffffff
+app_title=命令行</ppt>
+<event></event>
+</View>
+<View id="3" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+//background=@android.png
+</ppt>
+<event></event>
+</View>
+<View id="10" did="3" type="CoordinatorLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="7" did="10" type="ScrollView">
+<ppt>width=-1
+height=-2
+overScrollMode=never</ppt>
+<event></event>
+</View>
+<View id="15" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="8" did="15" type="TextView">
+<ppt>width=-1
+height=-2
+text=
+textColor=#ffffff
+typeface=monospace
+textSize=15dp
+textIsSelectable=true</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="LinearLayout">
+<ppt>width=-1
+height=100dp
+orientation=vertical
+ps=滚动占用空间布局
+visibility=invisible</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=horizontal
+background=#222222
+padding=20dp</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="EditText">
+<ppt>width=-1
+height=-2
+text=
+textColor=#ffffff
+typeface=monospace
+background=#222222
+textCursorDrawable=#ffffff
+hint=鍵入命令
+textColorHint=#eeeeee
+layout_weight=1
+singleLine=true</ppt>
+<event></event>
+</View>
+<View id="14" did="12" type="ImageButton">
+<ppt>width=45dp
+height=-1
+src=@send.png
+scaleType=fitcenter
+background=through
+BackgroundRipple=#eeeeee
+clickable=true</ppt>
+<event><eventItme type="clicki">t()
+{
+	ug(13,"text",sss.cmd)
+	call(结果,"mjava","shellExec.execShell",sss.cmd)
+	syso(结果)
+    //us(17,"text",结果)
+	ufnsui()
+	{
+		ug(8,"text",原先)
+		f(sss.cmd == "")
+		{
+			us(8,"text",原先 + "\nYou haven't entered anything.\n")
+		}
+        else f(sss.cmd == "Chaos Miau!")
+        {
+        	tw("Miau 🐱!")
+        }
+        else f(sss.cmd == "i like u")
+        {
+        	tw("youtube.com")
+        }
+        else
+        {
+		us(8,"text",原先 + "\n&gt; " + sss.cmd)
+		ug(8,"text",原先)
+		us(8,"text",原先 + "\n" + 结果)
+		ug(8,"text",原先)
+        }
+		
+		f(结果 ? "[2J[H")
+		{
+			us(8,"text", "")
+			syso(sss.cmd)
+		}
+		else
+		{
+			syso(sss.cmd)
+		}
+	}
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#222222",true)
+uycl(-3)
+uycl(0)
+
+utb(2)
+utb("left", 2, "@back.png")
+utb("set", "leftck", 2)
+{
+end()
+}
+
+t()
+{
+	call(GetVer,"mjava","shellExec.execShell","uname -r")
+    ufnsui()
+    {
+    	us(8,"text","Commander 1.04.2\nBuild:"+GetVer)
+    }
+}
+
+</eventItme><eventItme type="menu">case 重載:
+uigo("mian.iyu")
+end()
+break
+
+case 新回話:
+uigo("mian.iyu")
+break
+
+case 複製:
+ug(8,"text",iamvalue)
+sxb(iamvalue)
+break
+
+case 粘貼:
+shb(iamvalue)
+us(13,"text",iamvalue)
+break
+
+case 關於:
+s a = "Commander"
+s b = "Follow me on GitHub(Catndroid)\nhttps://github.com/catndroid"
+s c = "Done"
+utw(null, a, b, c, false, v)
+{
+}
+break</eventItme></UIEventset>
